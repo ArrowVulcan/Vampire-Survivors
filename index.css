@@ -191,10 +191,11 @@ html, body{
     margin-bottom: 14px;
 }
 
-#character_menu h4{
+#character_menu h3{
 	position: relative;
-    font-weight: normal;
+	font-weight: normal;
 	z-index: 50;
+	font-size: 1em;
 }
 
 #character_bg{
