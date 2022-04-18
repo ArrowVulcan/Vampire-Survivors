@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Build - Vampire Survivors Tools</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body oncontextmenu="return false;">
+
+    <div id="navbar">
+
+        <div id="nav_button">
+            <a href="./index.html"><div id="nav_build">Build</div></a>
+        </div>
+        
+    </div>
+
+    <div id="character_bg"></div>
+
+    <div id="content2">
+
+        <div id="display_wrapper">
+
+            <h1 id="character_name"></h1>
+
+        </div>
+
+        <div style="display: flex;">
+
+            <div onclick="back(3)" id="back_2">Back</div>
+
+            <div id="tooltip" class="tooltip">
+                <div onmousemove="share_tooltip(true)" onmouseleave="share_tooltip(false)" onclick="share()" id="share_button">Share!</div>
+                <span class="tooltiptext" id="myTooltip">Copy to Clipboard</span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div id="content">
+
+        <div id="character_menu">
+
+            <h2>Select Character</h2>
+
+            <div id="character_list_wrapper">
+
+                <div onclick="select_character(this)" data-name="antonio" class="character">
+                    <h4>Antonio</h4>
+                    <div class="character_image" style="background-position: 0px 0px; background-image: url('./images/characters/antonio.png')"></div>
+                    <div class="character_weapon" data-item="whip" style="background-position: -314px -88px; background-image: url('./images/items.png')"></div>
+                </div>
+    
+                <div onclick="select_character(this)" data-name="imelda" class="character">
+                    <h4>Imelda</h4>
+                    <div class="character_image" style="background-position: 0px 0px; background-image: url('./images/characters/imelda.png')"></div>
+                    <div class="character_weapon" data-item="magic_wand" style="background-position: -416px -47px; background-image: url('./images/items.png')"></div>
+                </div>
+    
+                <div onclick="select_character(this)" data-name="pasqualina" class="character">
+                    <h4>Pasqualina</h4>
+                    <div class="character_image" style="background-position: 0px 0px; background-image: url('./images/characters/pasqualina.png')"></div>
+                    <div class="character_weapon" data-item="runetracer" style="width: 13px; height:13px; background-position: -331px -40px; background-image: url('./images/items.png')"></div>
+                </div>
+    
+                <div onclick="select_character(this)" data-name="gennaro" class="character">
+                    <h4>Gennaro</h4>
+                    <div class="character_image" style="background-position: 0px 0px; background-image: url('./images/characters/gennaro.png')"></div>
+                    <div class="character_weapon" data-item="knife" style="height: 7px; background-position: -74px -49px; background-image: url('./images/items.png')"></div>
+                </div>
+    
+                <div onclick="select_character(this)" data-name="arca" class="character">
+                    <h4>Arca</h4>
+                    <div class="character_image" style="height: 97px; background-position: 0px 0px; background-image: url('./images/characters/arca.png')"></div>
+                    <div class="character_weapon" data-item="fire_wand" style="background-position: -382px -65px; background-image: url('./images/items.png')"></div>
+                </div>
+    
+                <div onclick="select_character(this)" data-name="porta" class="character">
+                    <h4>Porta</h4>
+                    <div class="character_image" style="height: 97px; background-position: 0px 0px; background-image: url('./images/characters/porta.png')"></div>
+                    <div class="character_weapon" data-item="lightning_ring" style="background-position: -180px -49px; background-image: url('./images/items.png')"></div>
+                </div>
+    
+                <div onclick="select_character(this)" data-name="lama" class="character">
+                    <h4>Lama</h4>
+                    <div class="character_image" style="background-position: 0px 0px; background-image: url('./images/characters/lama.png')"></div>
+                    <div class="character_weapon" data-item="axe" style="background-position: -426px -17px; background-image: url('./images/items.png')"></div>
+                </div>
+    
+                <div onclick="select_character(this)" data-name="poe" class="character">
+                    <h4>Poe</h4>
+                    <div class="character_image" style="bottom: 3px; background-position: 0px 0px; background-image: url('./images/characters/poe.png')"></div>
+                    <div class="character_weapon" data-item="garlic" style="width: 13px; height: 13px; background-position: -378px -99px; background-image: url('./images/items.png')"></div>
+                </div>
+    
+                <div onclick="select_character(this)" data-name="clerici" class="character">
+                    <h4>Clerici</h4>
+                    <div class="character_image" style="background-position: 0px 0px; background-image: url('./images/characters/clerici.png')"></div>
+                    <div class="character_weapon" data-item="santa_water" style="width: 15px; background-position: -164px -66px; background-image: url('./images/items.png')"></div>
+                </div>
+    
+                <div onclick="select_character(this)" data-name="dommario" class="character">
+                    <h4>Dommario</h4>
+                    <div class="character_image" style="background-position: 0px 0px; background-image: url('./images/characters/dommario.png')"></div>
+                    <div class="character_weapon" data-item="king_bible" style="width: 12px; background-position: -162px -94px; background-image: url('./images/items.png')"></div>
+                </div>
+    
+                <div onclick="select_character(this)" data-name="krochi" class="character">
+                    <h4>Krochi</h4>
+                    <div class="character_image" style="background-position: 0px 0px; background-image: url('./images/characters/krochi.png')"></div>
+                    <div class="character_weapon" data-item="cross" style="background-position: -130px -49px; background-image: url('./images/items.png')"></div>
+                </div>
+    
+                <div onclick="select_character(this)" data-name="christine" class="character">
+                    <h4>Christine</h4>
+                    <div class="character_image" style="bottom: 6px; height: 100px; background-position: 0px 0px; background-image: url('./images/characters/christine.png')"></div>
+                    <div class="character_weapon" data-item="pentagram" style="background-position: -214px -49px; background-image: url('./images/items.png')"></div>
+                </div>
+    
+                <div onclick="select_character(this)" data-name="pugnala" class="character">
+                    <h4>Pugnala</h4>
+                    <div class="character_image" style="bottom: 7px; height: 117px; background-position: 0px 0px; background-image: url('./images/characters/pugnala.png')"></div>
+                    <div class="character_weapon" data-item="phiera_der_tuphello" style="background-position: -114px -66px; background-image: url('./images/items.png')"></div>
+                </div>
+    
+                <div onclick="select_character(this)" data-name="giovanna" class="character">
+                    <h4>Giovanna</h4>
+                    <div class="character_image" style="background-position: 0px 0px; background-image: url('./images/characters/giovanna.png')"></div>
+                    <div class="character_weapon" data-item="gatti_amari" style="height: 13px; background-position: -314px -40px; background-image: url('./images/items.png')"></div>
+                </div>
+    
+                <div onclick="select_character(this)" data-name="poppea" class="character">
+                    <h4>Poppea</h4>
+                    <div class="character_image" style="background-position: 0px 0px; background-image: url('./images/characters/poppea.png')"></div>
+                    <div class="character_weapon" data-item="song_of_mana" style="background-position: -314px -54px; background-image: url('./images/items.png')"></div>
+                </div>
+    
+                <div onclick="select_character(this)" data-name="mortaccio" class="character">
+                    <h4>Mortaccio</h4>
+                    <div class="character_image" style="height: 108px; background-position: 0px 0px; background-image: url('./images/characters/mortaccio.png')"></div>
+                    <div class="character_weapon" data-item="bone" style="height: 9px; background-position: -348px -99px; background-image: url('./images/items.png')"></div>
+                </div>
+    
+                <div onclick="select_character(this)" data-name="cavallo" class="character">
+                    <h4>Cavallo</h4>
+                    <div class="character_image" style="height: 99px; background-position: 0px 0px; background-image: url('./images/characters/cavallo.png')"></div>
+                    <div class="character_weapon" data-item="cherry_bomb" style="background-position: -80px -74px; background-image: url('./images/items.png')"></div>
+                </div>
+    
+                <div onclick="select_character(this)" data-name="ramba" class="character">
+                    <h4>Ramba</h4>
+                    <div class="character_image" style="height: 102px; background-position: 0px 0px; background-image: url('./images/characters/ramba.png')"></div>
+                    <div class="character_weapon" data-item="carrello" style="background-position: -61px -91px; background-image: url('./images/items.png')"></div>
+                </div>
+    
+                <div onclick="select_character(this)" data-name="exdash" class="character">
+                    <h4>Exdash</h4>
+                    <div class="character_image" style="background-position: 0px 0px; background-image: url('./images/characters/exdash.png')"></div>
+                    <div class="character_weapon" data-item="ebony_wings" style="height: 15px; background-position: -282px -67px; background-image: url('./images/items.png')"></div>
+                </div>
+    
+                <div onclick="select_character(this)" data-name="toastie" class="character">
+                    <h4>toastie</h4>
+                    <div class="character_image" style="background-position: 0px 0px; background-image: url('./images/characters/toastie.png')"></div>
+                    <div class="character_weapon" data-item="peachone" style="height: 15px; background-position: -297px -51px; background-image: url('./images/items.png')"></div>
+                </div>
+    
+                <div onclick="select_character(this)" data-name="leda" class="character">
+                    <h4>Leda</h4>
+                    <div class="character_image" style="transform: scale(3); image-rendering: pixelated; left: 58px; bottom: 58px; width: 49px; height: 47px; background-position: 0px 0px; background-image: url('./images/characters/leda.png')"></div>
+                    <div class="character_weapon" data-item="holy_wand" style="background-position: -416px -64px; background-image: url('./images/items.png')"></div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div id="item_menu">
+
+            <h2>Select Items</h2>
+
+            <div id="item_list_wrapper">
+
+                <div class="item" onclick="add_item(this)" data-item="whip"><div class="item_image" style="background-position: -314px -88px; background-image: url('./images/items.png')"></div></div>
+                <div class="item" onclick="add_item(this)" data-item="bloody_tear"><div class="item_image" style="background-position: -331px -88px; background-image: url('./images/items.png')"></div></div>
+                <div class="item" onclick="add_item(this)" data-item="magic_wand"><div class="item_image" style="background-position: -416px -47px; background-image: url('./images/items.png')"></div></div>
+                <div class="item" onclick="add_item(this)" data-item="holy_wand"><div class="item_image" style="background-position: -416px -64px; background-image: url('./images/items.png')"></div></div>
+                <div class="item" onclick="add_item(this)" data-item="knife"><div class="item_image" style="height: 7px; background-position: -74px -49px; background-image: url('./images/items.png')"></div></div>
+                <div class="item" onclick="add_item(this)" data-item="thousand_edge"><div class="item_image" style="height: 15px; background-position: -222px -33px; background-image: url('./images/items.png')"></div></div>
+                <div class="item" onclick="add_item(this)" data-item="axe"><div class="item_image" style="background-position: -426px -17px; background-image: url('./images/items.png')"></div></div>
+                <div class="item" onclick="add_item(this)" data-item="death_spiral"><div class="item_image" style="background-position: -252px -94px; background-image: url('./images/items.png')"></div></div>
+                <div class="item" onclick="add_item(this)" data-item="cross"><div class="item_image" style="background-position: -130px -49px; background-image: url('./images/items.png')"></div></div>
+                <div class="item" onclick="add_item(this)" data-item="heaven_sword"><div class="item_image" style="background-position: -128px -94px; background-image: url('./images/items.png')"></div></div>
+                <div class="item" onclick="add_item(this)" data-item="king_bible"><div class="item_image" style="width: 12px; background-position: -162px -94px; background-image: url('./images/items.png')"></div></div>
+                <div class="item" onclick="add_item(this)" data-item="unholy_vespers"><div class="item_image" style="width: 12px; background-position: -382px -82px; background-image: url('./images/items.png')"></div></div>
+                <div class="item" onclick="add_item(this)" data-item="fire_wand"><div class="item_image" style="background-position: -382px -65px; background-image: url('./images/items.png')"></div></div>
+                <div class="item" onclick="add_item(this)" data-item="hellfire"><div class="item_image" style="background-position: -145px -94px; background-image: url('./images/items.png')"></div></div>
+                <div class="item" onclick="add_item(this)" data-item="garlic"><div class="item_image" style="width: 13px; height: 13px; background-position: -378px -99px; background-image: url('./images/items.png')"></div></div>
+                <div class="item" onclick="add_item(this)" data-item="soul_eater"><div class="item_image" style="width: 14px; height: 15px; background-position: -433px -64px; background-image: url('./images/items.png')"></div></div>
+                <div class="item" onclick="add_item(this)" data-item="santa_water"><div class="item_image" style="width: 15px; background-position: -164px -66px; background-image: url('./images/items.png')"></div></div>
+                <div class="item" onclick="add_item(this)" data-item="la_borra"><div class="item_image" style="background-position: -288px -109px; background-image: url('./images/items.png')"></div></div>
+                <div class="item" onclick="add_item(this)" data-item="runetracer"><div class="item_image" style="width: 13px; height:13px; background-position: -331px -40px; background-image: url('./images/items.png')"></div></div>
+                <div class="item" onclick="add_item(this)" data-item="no_future"><div class="item_image" style="background-position: -63px -74px; background-image: url('./images/items.png')"></div></div>
+                <div class="item" onclick="add_item(this)" data-item="lightning_ring"><div class="item_image" style="background-position: -180px -49px; background-image: url('./images/items.png')"></div></div>
+                <div class="item" onclick="add_item(this)" data-item="thunder_loop"><div class="item_image" style="background-position: -348px -48px; background-image: url('./images/items.png')"></div></div>
+                <div class="item" onclick="add_item(this)" data-item="pentagram"><div class="item_image" style="background-position: -214px -49px; background-image: url('./images/items.png')"></div></div>
+                <div class="item" onclick="add_item(this)" data-item="gorgeous_moon"><div class="item_image" style="background-position: -214px -66px; background-image: url('./images/items.png')"></div></div>
+                <div class="item" onclick="add_item(this)" data-item="phiera_der_tuphello"><div class="item_image" style="background-position: -114px -66px; background-image: url('./images/items.png')"></div></div>
+                <div class="item" onclick="add_item(this)" data-item="eight_the_sparrow"><div class="item_image" style="background-position: -131px -66px; background-image: url('./images/items.png')"></div></div>
+                <div class="item" onclick="add_item(this)" data-item="phieraggi"><div class="item_image" style="background-position: -95px -94px; background-image: url('./images/items.png')"></div></div>
+                <div class="item" onclick="add_item(this)" data-item="song_of_mana"><div class="item_image" style="background-position: -314px -54px; background-image: url('./images/items.png')"></div></div>
+                <div class="item" onclick="add_item(this)" data-item="mannajja"><div class="item_image" style="background-position: -331px -54px; background-image: url('./images/items.png')"></div></div>
+                <div class="item" onclick="add_item(this)" data-item="gatti_amari"><div class="item_image" style="height: 13px; background-position: -314px -40px; background-image: url('./images/items.png')"></div></div>
+                <div class="item" onclick="add_item(this)" data-item="clock_lancet"><div class="item_image" style="width: 15px; background-position: -175px -94px; background-image: url('./images/items.png')"></div></div>
+                <div class="item" onclick="add_item(this)" data-item="laurel"><div class="item_image" style="background-position: -163px -49px; background-image: url('./images/items.png')"></div></div>
+                <div class="item" onclick="add_item(this)" data-item="peachone"><div class="item_image" style="height: 15px; background-position: -297px -51px; background-image: url('./images/items.png')"></div></div>
+                <div class="item" onclick="add_item(this)" data-item="ebony_wings"><div class="item_image" style="height: 15px; background-position: -282px -67px; background-image: url('./images/items.png')"></div></div>
+                <div class="item" onclick="add_item(this)" data-item="vandalier"><div class="item_image" style="width: 18px; background-position: -426px -1px; background-image: url('./images/items.png')"></div></div>
+                <div class="item" onclick="add_item(this)" data-item="bone"><div class="item_image" style="height: 9px; background-position: -348px -99px; background-image: url('./images/items.png')"></div></div>
+                <div class="item" onclick="add_item(this)" data-item="cherry_bomb"><div class="item_image" style="background-position: -80px -74px; background-image: url('./images/items.png')"></div></div>
+                <div class="item" onclick="add_item(this)" data-item="carrello"><div class="item_image" style="background-position: -61px -91px; background-image: url('./images/items.png')"></div></div>
+                <div class="item" onclick="add_item(this)" data-item="spinach" data-type="passive"><div class="item_image" style="width: 12px; background-position: -208px -94px; background-image: url('./images/items.png')"></div></div>
+                <div class="item" onclick="add_item(this)" data-item="armor" data-type="passive"><div class="item_image" style="height: 12px; background-position: -426px -34px; background-image: url('./images/items.png')"></div></div>
+                <div class="item" onclick="add_item(this)" data-item="hollow_heart" data-type="passive"><div class="item_image" style="height: 15px; background-position: -205px -33px; background-image: url('./images/items.png')"></div></div>
+                <div class="item" onclick="add_item(this)" data-item="pummarola" data-type="passive"><div class="item_image" style="width: 14px; height: 12px; background-position: -433px -80px; background-image: url('./images/items.png')"></div></div>
+                <div class="item" onclick="add_item(this)" data-item="empty_tome" data-type="passive"><div class="item_image" style="background-position: -63px -57px; background-image: url('./images/items.png')"></div></div>
+                <div class="item" onclick="add_item(this)" data-item="candelabrador" data-type="passive"><div class="item_image" style="width: 15px; background-position: -80px -57px; background-image: url('./images/items.png')"></div></div>
+                <div class="item" onclick="add_item(this)" data-item="bracer" data-type="passive"><div class="item_image" style="background-position: -97px -66px; background-image: url('./images/items.png')"></div></div>
+                <div class="item" onclick="add_item(this)" data-item="spellbinder" data-type="passive"><div class="item_image" style="width: 14px; height: 15px; background-position: -299px -67px; background-image: url('./images/items.png')"></div></div>
+                <div class="item" onclick="add_item(this)" data-item="duplicator" data-type="passive"><div class="item_image" style="width: 14px; height: 14px; background-position: -110px -111px; background-image: url('./images/items.png')"></div></div>
+                <div class="item" onclick="add_item(this)" data-item="wings" data-type="passive"><div class="item_image" style="background-position: -348px -82px; background-image: url('./images/items.png')"></div></div>
+                <div class="item" onclick="add_item(this)" data-item="attractorb" data-type="passive"><div class="item_image" style="width: 14px; height: 14px; background-position: -95px -111px; background-image: url('./images/items.png')"></div></div>
+                <div class="item" onclick="add_item(this)" data-item="clover" data-type="passive"><div class="item_image" style="background-position: -78px -91px; background-image: url('./images/items.png')"></div></div>
+                <div class="item" onclick="add_item(this)" data-item="crown" data-type="passive"><div class="item_image" style="width: 15px; background-position: -147px -49px; background-image: url('./images/items.png')"></div></div>
+                <div class="item" onclick="add_item(this)" data-item="stone_mask" data-type="passive"><div class="item_image" style="width: 12px; height: 10px; background-position: -416px -103px; background-image: url('./images/items.png')"></div></div>
+                <div class="item" onclick="add_item(this)" data-item="skull_o_maniac" data-type="passive"><div class="item_image" style="width: 15px; background-position: -148px -66px; background-image: url('./images/items.png')"></div></div>
+                <div class="item" onclick="add_item(this)" data-item="tiragisu" data-type="passive"><div class="item_image" style="background-position: -348px -65px; background-image: url('./images/items.png')"></div></div>
+
+            </div>
+
+            <div id="inventory_wrapper">
+
+                <h2>inventory</h2>
+
+                <div id="inventory">
+
+                    <div id="first_slot" class="item weapon_slot"></div>
+                    <div id="second_slot" class="item weapon_slot"></div>
+                    <div class="item weapon_slot"></div>
+                    <div class="item weapon_slot"></div>
+                    <div class="item weapon_slot"></div>
+                    <div class="item weapon_slot"></div>
+                    <div class="item weapon_slot"></div>
+                    <div class="item weapon_slot"></div>
+
+                    <div class="item passive_slot"></div>
+                    <div class="item passive_slot"></div>
+                    <div class="item passive_slot"></div>
+                    <div class="item passive_slot"></div>
+                    <div class="item passive_slot"></div>
+                    <div class="item passive_slot"></div>
+                    <div class="item passive_slot"></div>
+                    <div class="item passive_slot"></div>
+
+                </div>
+
+                <div onclick="back()" id="back">Back</div>
+                <div onclick="next()" id="next">Next</div>
+
+            </div>
+
+        </div>
+
+        <div id="arcana_menu">
+
+            <h2>Select Arcanas</h2>
+
+            <div id="arcana_list_wrapper">
+
+                <div onclick="select_arcana(this)" data-name="arcana_0" data-state="disabled" class="arcana">
+                    <div class="arcana_image" style="background-position: -343px -163px;"></div>
+                </div>
+
+                <div onclick="select_arcana(this)" data-name="arcana_1" data-state="disabled" class="arcana">
+                    <div class="arcana_image" style="background-position: -343px -163px;"></div>
+                </div>
+
+                <div onclick="select_arcana(this)" data-name="arcana_2" data-state="disabled" class="arcana">
+                    <div class="arcana_image" style="background-position: -343px -163px;"></div>
+                </div>
+
+                <div onclick="select_arcana(this)" data-name="arcana_3" data-state="disabled" class="arcana">
+                    <div class="arcana_image" style="background-position: -343px -163px;"></div>
+                </div>
+
+                <div onclick="select_arcana(this)" data-name="arcana_4" class="arcana">
+                    <div class="arcana_image" style="background-position: -229px -1px;"></div>
+                </div>
+
+                <div onclick="select_arcana(this)" data-name="arcana_5" class="arcana">
+                    <div class="arcana_image" style="background-position: -286px -1px;"></div>
+                </div>
+
+                <div onclick="select_arcana(this)" data-name="arcana_6" class="arcana">
+                    <div class="arcana_image" style="background-position: -343px -1px;"></div>
+                </div>
+
+                <div onclick="select_arcana(this)" data-name="arcana_7" data-state="disabled" class="arcana">
+                    <div class="arcana_image" style="background-position: -343px -163px;"></div>
+                </div>
+
+                <div onclick="select_arcana(this)" data-name="arcana_8" data-state="disabled" class="arcana">
+                    <div class="arcana_image" style="background-position: -343px -163px;"></div>
+                </div>
+
+                <div onclick="select_arcana(this)" data-name="arcana_9" data-state="disabled" class="arcana">
+                    <div class="arcana_image" style="background-position: -343px -163px;"></div>
+                </div>
+
+                <div onclick="select_arcana(this)" data-name="arcana_10" data-state="disabled" class="arcana">
+                    <div class="arcana_image" style="background-position: -343px -163px;"></div>
+                </div>
+
+                <div onclick="select_arcana(this)" data-name="arcana_11" data-state="disabled" class="arcana">
+                    <div class="arcana_image" style="background-position: -343px -163px;"></div>
+                </div>
+
+                <div onclick="select_arcana(this)" data-name="arcana_12" data-state="disabled" class="arcana">
+                    <div class="arcana_image" style="background-position: -343px -163px;"></div>
+                </div>
+
+                <div onclick="select_arcana(this)" data-name="arcana_13" data-state="disabled" class="arcana">
+                    <div class="arcana_image" style="background-position: -343px -163px;"></div>
+                </div>
+
+                <div onclick="select_arcana(this)" data-name="arcana_14" data-state="disabled" class="arcana">
+                    <div class="arcana_image" style="background-position: -343px -163px;"></div>
+                </div>
+
+                <div onclick="select_arcana(this)" data-name="arcana_15" data-state="disabled" class="arcana">
+                    <div class="arcana_image" style="background-position: -343px -163px;"></div>
+                </div>
+
+                <div onclick="select_arcana(this)" data-name="arcana_16" class="arcana">
+                    <div class="arcana_image" style="background-position: -1px -163px;"></div>
+                </div>
+
+                <div onclick="select_arcana(this)" data-name="arcana_17" class="arcana">
+                    <div class="arcana_image" style="background-position: -58px -163px;"></div>
+                </div>
+
+                <div onclick="select_arcana(this)" data-name="arcana_18" data-state="disabled" class="arcana">
+                    <div class="arcana_image" style="background-position: -343px -163px;"></div>
+                </div>
+
+                <div onclick="select_arcana(this)" data-name="arcana_19" class="arcana">
+                    <div class="arcana_image" style="background-position: -172px -163px;"></div>
+                </div>
+
+                <div onclick="select_arcana(this)" data-name="arcana_20" data-state="disabled" class="arcana">
+                    <div class="arcana_image" style="background-position: -343px -163px;"></div>
+                </div>
+
+                <div onclick="select_arcana(this)" data-name="arcana_22" data-state="disabled" class="arcana">
+                    <div class="arcana_image" style="background-position: -343px -163px;"></div>
+                </div>
+
+            </div>
+
+            <div id="arcana_wrapper">
+
+                <h2>Selected</h2>
+
+                <div id="arcana_inventory">
+
+                    <div onclick="select_arcana(this)" class="arcana arcana_slot">
+                        <div class="arcana_image" style="background-position: -400px -163px;"></div>
+                    </div>
+    
+                    <div onclick="select_arcana(this)" class="arcana arcana_slot">
+                        <div class="arcana_image" style="background-position: -400px -163px;"></div>
+                    </div>
+    
+                    <div onclick="select_arcana(this)" class="arcana arcana_slot">
+                        <div class="arcana_image" style="background-position: -400px -163px;"></div>
+                    </div>
+
+                </div>
+
+                <div style="display: flex;">
+
+                    <div onclick="back()" id="back">Back</div>
+                    <div onclick="next()" id="next">Next</div>
+
+                </div>
+        
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        const char_list = {
+            "a": "antonio",
+            "b": "imelda",
+            "c": "pasqualina",
+            "d": "gennaro",
+            "e": "arca",
+            "f": "porta",
+            "g": "lama",
+            "h": "poe",
+            "i": "clerici",
+            "j": "dommario",
+            "k": "krochi",
+            "l": "christine",
+            "m": "pugnala",
+            "n": "giovanna",
+            "o": "poppea",
+            "p": "mortaccio",
+            "q": "cavallo",
+            "r": "ramba",
+            "s": "exdash",
+            "t": "toastie",
+            "u": "leda",
+        }
+
+        const inventory_list = {
+            "a": "whip",
+            "b": "bloody_tear",
+            "c": "magic_wand",
+            "d": "holy_wand",
+            "e": "knife",
+            "f": "thousand_edge",
+            "g": "axe",
+            "h": "death_spiral",
+            "i": "cross",
+            "j": "heaven_sword",
+            "k": "king_bible",
+            "l": "unholy_vespers",
+            "m": "fire_wand",
+            "n": "hellfire",
+            "o": "garlic",
+            "p": "soul_eater",
+            "q": "santa_water",
+            "r": "la_borra",
+            "s": "runetracer",
+            "t": "no_future",
+            "u": "lightning_ring",
+            "v": "thunder_loop",
+            "w": "pentagram",
+            "x": "gorgeous_moon",
+            "y": "phiera_der_tuphello",
+            "z": "eight_the_sparrow",
+            "A": "phieraggi",
+            "B": "song_of_mana",
+            "C": "mannajja",
+            "D": "gatti_amari",
+            "E": "clock_lancet",
+            "F": "laurel",
+            "G": "peachone",
+            "H": "ebony_wings",
+            "I": "vandalier",
+            "J": "bone",
+            "K": "cherry_bomb",
+            "L": "carrello",
+            "M": "spinach",
+            "N": "armor",
+            "O": "hollow_heart",
+            "P": "pummarola",
+            "Q": "empty_tome",
+            "R": "candelabrador",
+            "S": "bracer",
+            "T": "spellbinder",
+            "U": "duplicator",
+            "V": "wings",
+            "W": "attractorb",
+            "X": "clover",
+            "Y": "crown",
+            "Z": "stone_mask",
+            "0": "",
+            "1": "skull_o_maniac",
+            "2": "tiragisu",
+        }
+
+        const arcana_list = {
+            "a": "arcana_0",
+            "b": "arcana_1",
+            "c": "arcana_2",
+            "d": "arcana_3",
+            "e": "arcana_4",
+            "f": "arcana_5",
+            "g": "arcana_6",
+            "h": "arcana_7",
+            "i": "arcana_8",
+            "j": "arcana_9",
+            "k": "arcana_10",
+            "l": "arcana_11",
+            "m": "arcana_12",
+            "n": "arcana_13",
+            "o": "arcana_14",
+            "p": "arcana_15",
+            "q": "arcana_16",
+            "r": "arcana_17",
+            "s": "arcana_18",
+            "t": "arcana_19",
+            "u": "arcana_20",
+            "v": "arcana_21",
+            "w": "arcana_22",
+            "0": "",
+        }
+
+        const content = document.getElementById("content")
+        const content2 = document.getElementById("content2")
+        const character_name = document.getElementById("character_name")
+        const display_wrapper = document.getElementById("display_wrapper")
+        const character_bg = document.getElementById("character_bg")
+        const character_menu = document.getElementById("character_menu")
+        const item_menu = document.getElementById("item_menu")
+        const arcana_menu = document.getElementById("arcana_menu")
+        const back_menu = document.getElementById("back")
+        const back_menu_2 = document.getElementById("back_2")
+        const first_slot = document.getElementById("first_slot")
+        const second_slot = document.getElementById("second_slot")
+        const inventory = document.getElementById("inventory")
+        const arcana_inventory = document.getElementById("arcana_inventory")
+        const tooltip = document.getElementById("tooltip")
+        const myTooltip = document.getElementById("myTooltip")
+
+        let selected_character = null
+        let current_menu = 1
+
+        function load_arcana(e){
+
+            const arcana_query = document.querySelectorAll("#arcana_list_wrapper .arcana")
+
+            for(let i=17; i < e.length; i++){
+
+                for(let j=0; j < arcana_query.length; j++){
+                    
+                    if(arcana_query[j].dataset.name == arcana_list[e[i]]){
+                        arcana_inventory.children[i-17].parentElement.appendChild(arcana_query[j])
+                        break
+                    }
+
+                }
+
+            }
+
+            const arcana_slot_query = document.querySelectorAll(".arcana_slot")
+
+            arcana_slot_query.forEach(function(el){
+                el.remove()
+            })
+
+        }
+
+        function load_inventory(e){
+
+            const item_query = document.querySelectorAll("#item_list_wrapper .item")
+
+            for(let i=1; i < 17; i++){
+
+                for(let j=0; j < item_query.length; j++){
+                    
+                    if(item_query[j].dataset.item == inventory_list[e[i]]){
+                        inventory.children[i-1].append(item_query[j].firstChild)
+                        break
+                    }
+
+                }
+
+            }
+
+        }
+
+        function update_menu(e){
+
+            character_menu.style.display = "none"
+            item_menu.style.display = "none"
+            arcana_menu.style.display = "none"
+
+            if(current_menu == 1){ character_menu.style.display = "flex" }
+            
+            if(current_menu == 2){ item_menu.style.display = "flex" }
+            
+            if(current_menu == 3){
+
+                character_bg.firstChild.style.opacity = "0.25"
+                character_bg.style.position = "absolute"
+                arcana_menu.style.display = "flex"
+                content.style.display = "flex"
+                content2.style.display = "none"
+
+                display_wrapper.innerHTML = ""
+
+            }
+
+            if(current_menu == 4){
+
+                character_bg.firstChild.style.opacity = "1"
+                character_bg.style.position = "relative"
+
+                display_wrapper.style.display = "flex"
+                display_wrapper.innerHTML += '<h1 id="character_name">' + selected_character + '</h1>'
+
+                let clone_inventory = inventory.cloneNode(true)
+                let clone_arcana_inventory = arcana_inventory.cloneNode(true)
+
+                display_wrapper.appendChild(clone_inventory)
+                display_wrapper.appendChild(clone_arcana_inventory)
+                content.style.display = "none"
+                content2.style.display = "flex"
+
+            }
+
+            if(current_menu == 5){
+
+                char = char_list[e[0]]
+
+                load_inventory(e)
+                load_arcana(e)
+
+                character_bg.innerHTML = '<img src="./images/characters/' + char + '.png" alt="' + char + '">'
+
+                character_bg.firstChild.style.opacity = "1"
+                character_bg.style.position = "relative"
+
+                display_wrapper.style.display = "flex"
+                character_name.innerHTML = char
+                display_wrapper.appendChild(inventory)
+                display_wrapper.appendChild(arcana_inventory)
+                content.style.display = "none"
+                content2.style.display = "flex"
+                back_menu_2.style.display = "none"
+                tooltip.style.display = "none"
+        
+            }
+
+            if(current_menu > 1){
+                back_menu.style.display = "block"
+            }else{
+                back_menu.style.display = "none"
+                character_bg.firstChild.style.opacity = "0"
+            }
+
+        }
+
+        function clear_items(char){
+
+            document.querySelectorAll("#inventory .item").forEach(function(el){
+                if(el.id != "first_slot" && (el.id != "second_slot")){ el.innerHTML = "" }
+            })
+
+            document.querySelectorAll("#item_list_wrapper .item").forEach(function(el){
+                el.classList.remove("in_use")
+            })
+
+        }
+
+        function select_character(e){
+
+            selected_character = e.dataset.name
+
+            let width = e.lastElementChild.style["width"].replaceAll("'", "") || "16px"
+            let height = e.lastElementChild.style["height"].replaceAll("'", "") || "16px"
+            let position = e.lastElementChild.style["backgroundPosition"].split(" ")
+            let pos_x = position[0].replaceAll("'", "")
+            let pos_y = position[1].replaceAll("'", "")
+
+            first_slot.innerHTML = '<div class="item_image" data-weapon="' + e.lastElementChild.dataset.item + '" style=" width: ' + width + '; height: '+ height +'; background-position: ' + pos_x + ' ' + pos_y + '; background-image: url(\'./images/items.png\')"></div>'
+            
+            first_slot.onclick = function(){ remove_item(this) } // Currently makes it possible to remove all main weapons (First slot).
+            /*
+            if(e.lastElementChild.dataset.item == "phiera_der_tuphello"){
+                first_slot.onclick = function(){ remove_item(this) }
+            }else{
+                first_slot.onclick = null
+            }
+            */
+
+            if(e.dataset.name == "pugnala"){
+                second_slot.innerHTML = '<div class="item_image" data-weapon="eight_the_sparrow" style="background-position: -131px -66px; background-image: url(\'./images/items.png\')"></div>'
+                second_slot.onclick = function(){ remove_item(this) }
+            }else{
+                second_slot.innerHTML = ""
+            }
+            
+            clear_items(e.dataset.name)
+            select_item(e.lastElementChild.dataset.item)
+            if(e.dataset.name == "pugnala"){
+                select_item("eight_the_sparrow")
+            }
+
+            current_menu += 1
+            update_menu()
+
+            character_bg.innerHTML = '<img src="./images/characters/' + e.dataset.name + '.png" alt="' + e.dataset.name + '">'
+            setTimeout(function(){
+                character_bg.firstChild.style.opacity = "0.2"
+            }, 50)
+
+        }
+
+        function select_item(item){
+
+            document.querySelectorAll("#item_list_wrapper .item").forEach(function(el){
+
+                if(item == el.dataset.item && (item != undefined || el.dataset.item != undefined)){
+                    el.classList.add("in_use")
+                }
+
+            })
+
+        }
+
+        function remove_arcana(e){
+
+            e.parentElement.innerHTML = '<div class="arcana_image" style="background-position: -400px -163px;"></div>'
+
+            document.querySelectorAll("#arcana_menu .in_use").forEach(function(el){
+                if(e.dataset.name == el.parentElement.dataset.name){ el.classList.remove("in_use") }
+            })
+
+        }
+
+        function remove_item(e){
+            
+            if(e.firstChild != null){
+
+                document.querySelectorAll(".in_use").forEach(function(el){
+                    if(e.firstChild.dataset.weapon == el.dataset.item){ el.classList.remove("in_use") }
+                })
+
+                e.firstChild.remove()
+
+            }
+
+        }
+
+        function add_item(e){
+
+            let w_slots = document.getElementsByClassName("weapon_slot")
+            let p_slots = document.getElementsByClassName("passive_slot")
+            let check_if_exist = false
+            let found_item = null
+
+            if(e.dataset.type == "passive"){ w_slots = p_slots }
+
+            for(let i=0; i < w_slots.length; i++){
+
+                if(w_slots[i].firstChild){
+
+                    if(w_slots[i].firstChild.dataset.weapon == e.dataset.item){
+                        check_if_exist = true
+                        found_item = w_slots[i]
+                        break
+                    }
+                }
+
+            }
+
+            if(!check_if_exist){
+
+                for(let i=0; i < w_slots.length; i++){
+
+                    if(w_slots[i].childElementCount == 0){
+
+                        let width = e.firstChild.style["width"].replaceAll("'", "") || "16px"
+                        let height = e.firstChild.style["height"].replaceAll("'", "") || "16px"
+                        let position = e.firstChild.style["backgroundPosition"].split(" ")
+                        let pos_x = position[0].replaceAll("'", "")
+                        let pos_y = position[1].replaceAll("'", "")
+
+                        w_slots[i].onclick = function(){ remove_item(this) }
+
+                        w_slots[i].innerHTML= '<div class="item_image" onclick="remove_item(this)" data-weapon="' + e.dataset.item + '" style=" width: ' + width + '; height: '+ height +'; background-position: ' + pos_x + ' ' + pos_y + '; background-image: url(\'./images/items.png\')"></div>'
+                        e.classList.add("in_use")
+                        break
+
+                    }
+
+                }
+
+            }else{
+
+
+                // Currently remove all
+                found_item.innerHTML = ""
+                if(e.classList.contains("in_use")){ e.classList.remove("in_use")}
+
+                /*
+                if(selected_character == "pugnala" || found_item.id != "first_slot"){
+                    found_item.innerHTML = ""
+                    if(e.classList.contains("in_use")){ e.classList.remove("in_use")}
+                }
+                */
+
+            }
+
+        }
+
+        function select_arcana(e){
+
+            if(e.dataset.state == "disabled"){ return }
+
+            let a_slots = document.getElementsByClassName("arcana_slot")
+            let check_if_exist = false
+            let found_arcana = null
+
+            for(let i=0; i < a_slots.length; i++){
+
+                if(a_slots[i]){
+
+                    if(a_slots[i].children[0].dataset.name == e.dataset.name){
+                        check_if_exist = true
+                        found_arcana = a_slots[i]
+                        break
+                    }
+                }
+
+            }
+
+            if(!check_if_exist){
+
+                for(let i=0; i < a_slots.length; i++){
+
+                    if(a_slots[i].children[0].dataset.name == undefined){
+
+                        let position = e.children[0].style["backgroundPosition"].split(" ")
+                        let pos_x = position[0].replaceAll("'", "")
+                        let pos_y = position[1].replaceAll("'", "")
+
+                        a_slots[i].innerHTML= '<div class="arcana_image" data-name="' + e.dataset.name + '" onclick="remove_arcana(this)" style="background-position: ' + pos_x + ' ' + pos_y + ';"></div>'
+                        e.children[0].classList.add("in_use")
+                        break
+
+                    }
+
+                }
+
+            }else{
+                found_arcana.innerHTML = '<div class="arcana_image" style="background-position: -400px -163px;"></div>'
+                if(e.children[0].classList.contains("in_use")){ e.children[0].classList.remove("in_use")}
+            }
+
+        }
+
+        function back(index){
+            if(index){
+                current_menu = index+1
+            }
+            if(current_menu > 1){ current_menu -= 1 }
+            update_menu()
+        }
+
+        function next(){
+            if(current_menu < 4){ current_menu += 1 }
+            update_menu()
+        }
+
+        function get_info(){
+
+            const char = Object.entries(char_list).reduce((obj, [key, value]) => ({ ...obj, [value]: key }), {})
+            const item = Object.entries(inventory_list).reduce((obj, [key, value]) => ({ ...obj, [value]: key }), {})
+            const arc = Object.entries(arcana_list).reduce((obj, [key, value]) => ({ ...obj, [value]: key }), {})
+
+            let result = ""
+
+            result += char[selected_character]
+
+            const item_query = document.querySelectorAll("#content2 #inventory .item").forEach(function(el){
+
+                let wep = 0
+
+                if(el.firstChild != null){
+                    wep = item[el.firstChild.dataset.weapon]
+                }
+
+                result += wep
+
+            })
+
+            const arcana_query = document.querySelectorAll("#content2 #arcana_inventory .arcana").forEach(function(el){
+            
+                let arcan = 0
+
+                if(el.children[0] != null){
+                    if(el.children[0].dataset.name != undefined){
+                        arcan = arc[el.children[0].dataset.name]
+                    }
+                }
+
+                result += arcan
+
+            })
+
+            return result //"ggabude00SDFJGVTQeg0"
+            
+        }
+
+        function share_tooltip(bool){
+
+            if(!bool){
+                myTooltip.style.opacity = "1"
+                myTooltip.innerText = "Copy to Clipboard"
+            }
+
+        }
+
+        function share(){
+
+            const q_url = window.location.href
+            const new_url = q_url + "?&q=" + get_info()
+
+            navigator.clipboard.writeText(new_url)
+
+            myTooltip.innerText = "Copied!"
+
+            setTimeout(() => {
+                myTooltip.style.opacity = "0"
+            }, 1000)
+
+        }
+
+        function setup(){
+
+            const paramsString = window.location.href
+            let searchParams = new URLSearchParams(paramsString)
+
+            const code = searchParams.get("q")
+
+            if(code){
+                current_menu = 5
+                update_menu(code)
+            }
+
+        }
+        setup()
+
+    </script>
+    
+</body>
+</html>
