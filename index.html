@@ -249,23 +249,27 @@
 
                 <div id="inventory">
 
-                    <div id="first_slot" class="item weapon_slot"></div>
-                    <div id="second_slot" class="item weapon_slot"></div>
-                    <div class="item weapon_slot"></div>
-                    <div class="item weapon_slot"></div>
-                    <div class="item weapon_slot"></div>
-                    <div class="item weapon_slot"></div>
-                    <div class="item weapon_slot"></div>
-                    <div class="item weapon_slot"></div>
+                    <div class="slot_wrapper">
 
-                    <div class="item passive_slot"></div>
-                    <div class="item passive_slot"></div>
-                    <div class="item passive_slot"></div>
-                    <div class="item passive_slot"></div>
-                    <div class="item passive_slot"></div>
-                    <div class="item passive_slot"></div>
-                    <div class="item passive_slot"></div>
-                    <div class="item passive_slot"></div>
+                        <div id="first_slot" class="item weapon_slot"></div>
+                        <div id="second_slot" class="item weapon_slot"></div>
+                        <div class="item weapon_slot"></div>
+                        <div class="item weapon_slot"></div>
+                        <div class="item weapon_slot"></div>
+                        <div class="item weapon_slot"></div>
+
+                    </div>
+
+                    <div class="slot_wrapper">
+
+                        <div class="item passive_slot"></div>
+                        <div class="item passive_slot"></div>
+                        <div class="item passive_slot"></div>
+                        <div class="item passive_slot"></div>
+                        <div class="item passive_slot"></div>
+                        <div class="item passive_slot"></div>
+
+                    </div>
 
                 </div>
 
@@ -535,17 +539,18 @@
 
         let selected_character = null
         let current_menu = 1
+        const inv_slots = 12
 
         function load_arcana(e){
 
             const arcana_query = document.querySelectorAll("#arcana_list_wrapper .arcana")
 
-            for(let i=17; i < e.length; i++){
+            for(let i=inv_slots+1; i < e.length; i++){
 
                 for(let j=0; j < arcana_query.length; j++){
                     
                     if(arcana_query[j].dataset.name == arcana_list[e[i]]){
-                        arcana_inventory.children[i-17].parentElement.appendChild(arcana_query[j])
+                        arcana_inventory.children[i-(inv_slots+1)].parentElement.appendChild(arcana_query[j])
                         break
                     }
 
@@ -565,15 +570,29 @@
 
             const item_query = document.querySelectorAll("#item_list_wrapper .item")
 
-            for(let i=1; i < 17; i++){
+            const _slots1 = 6
+            const _slots2 = 6
 
+            for(let i=1; i < _slots1+1; i++){
+            
                 for(let j=0; j < item_query.length; j++){
-                    
+
                     if(item_query[j].dataset.item == inventory_list[e[i]]){
-                        inventory.children[i-1].append(item_query[j].firstChild)
+                        inventory.children[0].children[i-1].append(item_query[j].firstChild)
                         break
                     }
+                }
 
+            }
+
+            for(let i=1; i < _slots2+1; i++){
+                
+                for(let j=0; j < item_query.length; j++){
+
+                    if(item_query[j].dataset.item == inventory_list[e[i+_slots1]]){
+                        inventory.children[1].children[i-1].append(item_query[j].firstChild)
+                        break
+                    }
                 }
 
             }
