@@ -10,7 +10,10 @@
     -khtml-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
-    user-select: none;	
+    user-select: none;
+
+	scrollbar-color: #0f0f0f #2c3055;
+	scrollbar-width: thin;
 }
 
 ::-webkit-scrollbar{
