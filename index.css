@@ -45,7 +45,7 @@ html, body{
 
 #content{
     position: relative;
-	display: flex;
+	display: none;
 	flex-direction: column;
 	align-items: center;
 	background-color: #4b4f74;
@@ -138,6 +138,8 @@ html, body{
     cursor: pointer;
 	padding: 5px 10px;
 	font-size: 24px;
+	background-color: #8b8b8b;
+	border-radius: 8px;
 }
 
 .character_selected{
@@ -187,6 +189,7 @@ html, body{
 	background-repeat: no-repeat;
 	transform: scale(3);
 	image-rendering: pixelated;
+	background-image: url('./images/items.png')
 }
 
 #character_menu h2, #item_menu h2, #arcana_menu h2{
@@ -238,6 +241,7 @@ html, body{
 	background-repeat: no-repeat;
 	transform: scale(3);
 	image-rendering: pixelated;
+	background-image: url('./images/items.png')
 }
 
 #item_list_wrapper{
